@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile"
+    app:startDestination="@id/personnelFragment">
+
+    <fragment
+        android:id="@+id/personnelFragment"
+        android:name="com.tresfellas.queenbee.ui.register.PersonnelFragment"
+        android:label="PhoneRegisterFragment"
+        tools:layout="@layout/fragment_personnel" >
+
+        <action
+            android:id="@+id/action_personnelFragment_to_verificationCodeFragment"
+            app:destination="@id/verificationCodeFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/verificationCodeFragment"
+        android:name="com.tresfellas.queenbee.ui.register.VerificationCodeFragment"
+        android:label="VerificationCodeFragment"
+        tools:layout="@layout/fragment_verification_code">
+        <action
+            android:id="@+id/action_verificationCodeFragment_to_termsAndConditionsFragment"
+            app:destination="@id/termsFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.tresfellas.queenbee.ui.register.TermsFragment"
+        android:label="TermsFragment"
+        tools:layout="@layout/fragment_terms">
+        <action
+            android:id="@+id/action_termsFragment_to_termsDetailFragment"
+            app:destination="@id/termsDetailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit">
+        </action>
+        <action
+            android:id="@+id/action_termsFragment_to_profileStartFragment"
+            app:destination="@id/register"
+            app:popUpTo="@+id/personnelFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit">
+        </action>
+    </fragment>
+
+    <include app:graph="@navigation/register" />
+
+    <fragment
+        android:id="@+id/termsDetailFragment"
+        android:name="com.tresfellas.queenbee.ui.register.TermsDetailFragment"
+        android:label="TermsDetailFragment"
+        tools:layout="@layout/fragment_terms_detail">
+        <argument
+            android:name="terms"
+            app:argType="string" />
+    </fragment>
+</navigation>

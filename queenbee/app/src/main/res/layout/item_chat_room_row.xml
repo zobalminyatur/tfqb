@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <variable
+            name="chatRooms"
+            type="com.tresfellas.queenbee.data.model.ChatRoomsDTO.ChatRooms" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView_chat_room_username"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{chatRooms.nickName}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textView_chat_room_place"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:textColor="@color/gray_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{chatRooms.place}"
+            app:layout_constraintStart_toEndOf="@+id/textView_chat_room_username"
+            app:layout_constraintTop_toTopOf="@+id/textView_chat_room_username"
+            />
+
+        <TextView
+            android:id="@+id/textView_chat_room_dot"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:textColor="@color/gray_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:text="•"
+            app:layout_constraintStart_toEndOf="@+id/textView_chat_room_place"
+            app:layout_constraintTop_toTopOf="@+id/textView_chat_room_place"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_chat_room_place"
+            />
+
+        <TextView
+            android:id="@+id/textView_chat_room_age"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:textColor="@color/gray_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            app:set_age="@{chatRooms.age}"
+            app:layout_constraintStart_toEndOf="@+id/textView_chat_room_dot"
+            app:layout_constraintTop_toTopOf="@+id/textView_chat_room_place"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_chat_room_place"
+            />
+
+        <TextView
+            android:id="@+id/textView_chat_room_time"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:textColor="@color/gray_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            app:chatTimeMarker="@{chatRooms.lastMessageReceivedAt}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_chat_room_place"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_chat_room_place"
+            />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView_chat_room_wing"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:src="@drawable/ic_wing"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView_chat_room_username" />-->
+
+        <TextView
+            android:id="@+id/textView_chat_room_last_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            app:check_last_message="@{chatRooms}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_chat_room_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/textView_chat_room_isUnread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:text="new"
+            android:textColor="@color/gold"
+            app:check_message_unread="@{chatRooms.unreadMessage}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

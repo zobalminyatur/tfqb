@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="royalJellyPromotionsDTO"
+            type="com.tresfellas.queenbee.data.model.RoyalJellyPromotionsDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/textView_shop_free_daily_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매일 무료 충전"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_daily_1_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="매일 매일 접속 보너스"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_shop_free_daily_title" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_daily_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_daily_1_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_daily_1_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 50ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_daily_1"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_daily_1"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_daily_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_daily_1"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.dailyLogin}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_daily_1_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_daily_1_title" />
+
+        <View
+            android:id="@+id/line_shop_free_daily_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_daily_1" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_daily_2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_wing"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_daily_2_title"
+            app:layout_constraintEnd_toStartOf="@+id/textView_shop_free_daily_2_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_daily_2_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_daily_2_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="10dp"
+            android:text="바로 오늘에 매일 글 쓰기"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_daily_2_title"
+            app:layout_constraintTop_toBottomOf="@+id/line_shop_free_daily_1" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_daily_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_daily_2_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_daily_2_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 50ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_daily_2"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_daily_2"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_daily_2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_daily_2"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.dailyMoment}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_daily_2_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_daily_2_title" />
+
+        <View
+            android:id="@+id/line_shop_free_daily_2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_daily_2" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_first_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="최초 완료 시 무료 충전"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_shop_free_daily_2" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_first_1_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="과감한 프로필 작성 완료"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_shop_free_first_title" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_first_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_first_1_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_first_1_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 400ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_first_1"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_first_1"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_first_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_first_1"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.boldProfile}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_first_1_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_first_1_title" />
+
+        <View
+            android:id="@+id/line_shop_free_first_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_first_1" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_first_2_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_wing"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_first_2_title"
+            app:layout_constraintEnd_toStartOf="@+id/textView_shop_free_first_2_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_first_2_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_first_2_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="10dp"
+            android:text="바로 오늘에 첫 글 쓰기"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_first_2_title"
+            app:layout_constraintTop_toBottomOf="@+id/line_shop_free_first_1" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_first_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_first_2_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_first_2_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 300ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_first_2"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_first_2"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_first_2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_first_2"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.firstMoment}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_first_2_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_first_2_title" />
+
+        <View
+            android:id="@+id/line_shop_free_first_2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_first_2" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="안전지수 인증 무료 추천"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_shop_free_first_2" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_certify_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_certify_title"
+            app:layout_constraintStart_toEndOf="@+id/textView_shop_free_certify_title"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_certify_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_1_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="STD(성병) 검사 인증"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_shop_free_certify_title" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_certify_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_certify_1_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_1_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 15,000ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_certify_1"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_certify_1"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_certify_1" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_certify_1"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.std}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_certify_1_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_certify_1_title" />
+
+        <View
+            android:id="@+id/line_shop_free_certify_1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_certify_1" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_2_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="HPV 백신 접종 인증"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_shop_free_certify_1" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_certify_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_certify_2_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_2_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 15,000ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_certify_2"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_certify_2"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_certify_2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_certify_2"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.hpv}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_certify_2_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_certify_2_title" />
+
+        <View
+            android:id="@+id/line_shop_free_certify_2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_certify_2" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_3_title"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="COVID-19 접종 인증"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_shop_free_certify_2" />
+
+        <ImageView
+            android:id="@+id/imageView_shop_free_certify_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5sp"
+            android:src="@drawable/ic_honey_comb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_shop_free_certify_3_title" />
+
+        <TextView
+            android:id="@+id/textView_shop_free_certify_3_body"
+            style="@style/Widget.Queenbee.TextView.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5sp"
+            android:text="로얄젤리 5,000ml"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_shop_free_certify_3"
+            app:layout_constraintStart_toEndOf="@+id/imageView_shop_free_certify_3"
+            app:layout_constraintTop_toTopOf="@+id/imageView_shop_free_certify_3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_shop_free_certify_3"
+            style="@style/Widget.Queenbee.Button.shop"
+            app:button_state="@{royalJellyPromotionsDTO.promotions.covid}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_shop_free_certify_3_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView_shop_free_certify_3_title" />
+
+        <View
+            android:id="@+id/line_shop_free_certify_3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_shop_free_certify_3" />
+
+        <include
+            android:id="@+id/progressBar_shop_free"
+            layout="@layout/layout_progress_bar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

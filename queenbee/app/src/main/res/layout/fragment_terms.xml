@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/textView_terms_title"
+        style="@style/Widget.Queenbee.TextView.LoginTitle"
+        android:layout_marginTop="40dp"
+        android:text="@string/terms_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <androidx.appcompat.widget.AppCompatCheckBox-->
+<!--        android:id="@+id/checkBox_terms"-->
+<!--        style="@style/Widget.Queenbee.TextView.Head5"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:button="@drawable/custom_checkbox"-->
+<!--        android:paddingStart="8dp"-->
+<!--        android:text="@string/terms_checkBox"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/textView_terms_title"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView_terms_title" />-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/termsrow1"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_terms_title"
+        android:background="@drawable/textlines">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBox_termsItem"
+            style="@style/Widget.Queenbee.TextView.Head6"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:button="@drawable/custom_checkbox"
+            android:text="이용약관에 동의합니다."
+            android:paddingStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_terms_item1"
+            android:layout_width="55sp"
+            android:layout_height="55sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="20dp"
+            android:src="@drawable/ic_next_press"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/termsrow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/termsrow1"
+        android:background="@drawable/textlines">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBox_termsItem2"
+            style="@style/Widget.Queenbee.TextView.Head6"
+            android:layout_gravity="center"
+            android:layout_marginStart="32dp"
+            android:button="@drawable/custom_checkbox"
+            android:text="개인정보 이용약관에 동의합니다."
+            android:paddingStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_terms_item2"
+            android:layout_width="55sp"
+            android:layout_height="55sp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:padding="20dp"
+            android:src="@drawable/ic_next_press"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_terms"
+        style="@style/Widget.Queenbee.Button.Login"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <include
+        android:id="@+id/progressBar_terms"
+        layout="@layout/layout_progress_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

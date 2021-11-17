@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userDTO"
+            type="com.tresfellas.queenbee.data.model.UserDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarLayout_Theme"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profile_appbar_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/ic_back_press"
+                    />
+
+                <TextView
+                    android:id="@+id/profile_appbar_title"
+                    style="@style/Widget.Queenbee.TextView.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/user_profile_title"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/profile_appbar_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_honey_comb"
+                    app:layout_constraintBottom_toBottomOf="@+id/profile_appbar_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/profile_appbar_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout_profile"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_compatibility_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ProgressBar
+                    android:id="@+id/progressBar_compatibility_profile"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:indeterminate="false"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginEnd="5dp"
+                    android:progressDrawable="@drawable/circular_progress_bar"
+                    android:background="@drawable/circle_shape"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="100"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_compatibility_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/progressBar_compatibility_profile"
+                    app:layout_constraintBottom_toBottomOf="@+id/progressBar_compatibility_profile"
+                    app:layout_constraintStart_toStartOf="@+id/progressBar_compatibility_profile"
+                    app:layout_constraintEnd_toEndOf="@+id/progressBar_compatibility_profile"
+                    android:textColor="@color/gold_dark"
+                    app:setCompatibilityPercent="@{userDTO.compatibilityIndex}"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_compatibility_profile_decription"
+                    style="@style/Widget.Queenbee.TextView.Body1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    app:layout_constraintStart_toEndOf="@+id/progressBar_compatibility_profile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="@string/user_profile_compatibility_decription"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_no_opponent_compatibility_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/textView_no_opponent_compatibility_profile_decription"
+                    style="@style/Widget.Queenbee.TextView.Body3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/user_profile_no_opponent_compatibility"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_no_my_compatibility_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/textView_no_my_compatibility_profile_decription"
+                    style="@style/Widget.Queenbee.TextView.Body3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/user_profile_no_my_compatibility"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView_profile_line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/line"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView_profile_NickName"
+                style="@style/Widget.Queenbee.TextView.Head6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{userDTO.nickName}"
+                android:layout_gravity="start"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="6dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp"
+                >
+
+                <TextView
+                    android:id="@+id/textView_profile_row_age_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/user_profile_age"
+                    />
+                <TextView
+                    android:id="@+id/textView_profile_row_age_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:set_age="@{userDTO.age}"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    >
+                    <TextView
+                        android:id="@+id/textView_profile_row_distance_title"
+                        style="@style/Widget.Queenbee.TextView.Body2"
+                        android:textColor="@color/gray_dark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_profile_distance"
+                        />
+                    <ImageView
+                        android:id="@+id/imageView_profile_row_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:src="@drawable/ic_info"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView_profile_row_distance_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:meterToDistance="@{userDTO.distance}"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_location_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/user_profile_place"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_location_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{userDTO.placeName}"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_selfIntro_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/user_profile_self_intro"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_selfIntro_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{userDTO.selfIntroduction}"
+                    />
+                <TextView
+                    android:id="@+id/textView_profile_row_std_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/user_profile_std"
+                    />
+                <TextView
+                    android:id="@+id/textView_profile_row_std_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:safetyCheck="@{userDTO.safetyProfile}"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/button_profile_start_chat"
+                >
+                <TextView
+                    android:id="@+id/textView_profile_row_swipe_to_secret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_profile_swipe_to_bold_profile"
+                    />
+                <ImageView
+                    android:id="@+id/imageView_profile_row_swipe_to_secret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/ic_swipe_left"
+                    />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_profile_start_chat"
+                style="@style/Widget.Queenbee.Button.Login"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/user_profile_start_chat"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/register"
+    app:startDestination="@id/ProfileStartFragment">
+
+<!--    <fragment-->
+<!--        android:id="@+id/personnelFragment"-->
+<!--        android:name="com.tresfellas.queenbee.ui.register.PersonnelFragment"-->
+<!--        android:label="PhoneRegisterFragment"-->
+<!--        tools:layout="@layout/fragment_personnel" >-->
+
+<!--        <action-->
+<!--            android:id="@+id/action_personnelFragment_to_verificationCodeFragment"-->
+<!--            app:destination="@id/verificationCodeFragment"-->
+<!--            app:enterAnim="@anim/enter"-->
+<!--            app:exitAnim="@anim/exit"-->
+<!--            app:popEnterAnim="@anim/pop_enter"-->
+<!--            app:popExitAnim="@anim/pop_exit" />-->
+
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/verificationCodeFragment"-->
+<!--        android:name="com.tresfellas.queenbee.ui.register.VerificationCodeFragment"-->
+<!--        android:label="VerificationCodeFragment"-->
+<!--        tools:layout="@layout/fragment_verification_code">-->
+<!--        <action-->
+<!--            android:id="@+id/action_verificationCodeFragment_to_termsAndConditionsFragment"-->
+<!--            app:destination="@id/termsFragment"-->
+<!--            app:enterAnim="@anim/enter"-->
+<!--            app:exitAnim="@anim/exit"-->
+<!--            app:popEnterAnim="@anim/pop_enter"-->
+<!--            app:popExitAnim="@anim/pop_exit" />-->
+<!--        <argument-->
+<!--            android:name="phoneNumber"-->
+<!--            app:argType="string" />-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/termsFragment"-->
+<!--        android:name="com.tresfellas.queenbee.ui.register.TermsFragment"-->
+<!--        android:label="TermsFragment"-->
+<!--        tools:layout="@layout/fragment_terms">-->
+<!--        <action-->
+<!--            android:id="@+id/action_termsFragment_to_termsDetailFragment"-->
+<!--            app:destination="@id/termsDetailFragment"-->
+<!--            app:enterAnim="@anim/enter"-->
+<!--            app:exitAnim="@anim/exit"-->
+<!--            app:popEnterAnim="@anim/pop_enter"-->
+<!--            app:popExitAnim="@anim/pop_exit">-->
+<!--        </action>-->
+<!--        <action-->
+<!--            android:id="@+id/action_termsFragment_to_profileStartFragment"-->
+<!--            app:destination="@id/ProfileStartFragment"-->
+<!--            app:popUpTo="@+id/ProfileStartFragment"-->
+<!--            app:popUpToInclusive="true"-->
+<!--            app:enterAnim="@anim/enter"-->
+<!--            app:exitAnim="@anim/exit"-->
+<!--            app:popEnterAnim="@anim/pop_enter"-->
+<!--            app:popExitAnim="@anim/pop_exit">-->
+<!--        </action>-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/termsDetailFragment"-->
+<!--        android:name="com.tresfellas.queenbee.ui.register.TermsDetailFragment"-->
+<!--        android:label="TermsDetailFragment"-->
+<!--        tools:layout="@layout/fragment_terms_detail">-->
+<!--        <argument-->
+<!--            android:name="terms"-->
+<!--            app:argType="string" />-->
+<!--    </fragment>-->
+
+
+    <fragment
+        android:id="@+id/ProfileStartFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileStartFragment"
+        android:label="ProfileStartFragment"
+        tools:layout="@layout/fragment_profile_start">
+        <action
+            android:id="@+id/action_profileStartFragment_to_profileGenderFragment"
+            app:destination="@id/ProfileGenderFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileGenderFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileGenderFragment"
+        android:label="ProfileGenderFragment"
+        tools:layout="@layout/fragment_profile_gender">
+        <action
+            android:id="@+id/action_profileGenderFragment_to_selfCheckFragment"
+            app:destination="@id/SelfCheckFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SelfCheckFragment"
+        android:name="com.tresfellas.queenbee.ui.register.SelfCheckFragment"
+        android:label="SelfCheckFragment"
+        tools:layout="@layout/fragment_self_check">
+        <action
+            android:id="@+id/action_selfCheckFragment_to_selfCheckReportFragment"
+            app:destination="@id/SelfCheckReportFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+        <action
+            android:id="@+id/action_selfCheckFragment_to_notTestedFragment"
+            app:destination="@id/NotTestedFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/NotTestedFragment"
+        android:name="com.tresfellas.queenbee.ui.register.NotTestedFragment"
+        android:label="NotTestedFragment"
+        tools:layout="@layout/fragment_not_tested">
+    </fragment>
+
+    <fragment
+        android:id="@+id/SelfCheckReportFragment"
+        android:name="com.tresfellas.queenbee.ui.register.SelfCheckReportFragment"
+        android:label="SelfCheckReportFragment"
+        tools:layout="@layout/fragment_self_check_report">
+        <action
+            android:id="@+id/action_selfCheckReportFragment_to_profileAgeFragment"
+            app:destination="@id/ProfileAgeFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+        <action
+            android:id="@+id/action_selfCheckReportFragment_to_selfCheckReportFullFragment"
+            app:destination="@+id/SelfCheckReportFullFragment"
+            app:enterAnim="@anim/enter_from_bottom"
+            app:exitAnim="@anim/exit_to_bottom"
+            app:popEnterAnim="@anim/enter_from_bottom"
+            app:popExitAnim="@anim/exit_to_bottom"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileAgeFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileAgeFragment"
+        android:label="ProfileAgeFragment"
+        tools:layout="@layout/fragment_profile_age">
+        <action
+            android:id="@+id/action_profileAgeFragment_to_profileNicknameFragment"
+            app:destination="@id/ProfileNicknameFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileNicknameFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileNicknameFragment"
+        android:label="ProfileNicknameFragment"
+        tools:layout="@layout/fragment_profile_nickname">
+        <action
+            android:id="@+id/action_profileNicknameFragment_to_profileSelfIntroFragment"
+            app:destination="@id/ProfileSelfIntroFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileSelfIntroFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileSelfIntroFragment"
+        android:label="ProfileSelfIntroFragment"
+        tools:layout="@layout/fragment_profile_self_intro">
+        <action
+            android:id="@+id/action_profileSelfIntroFragment_to_profileMainLocationFragment"
+            app:destination="@id/ProfileMainLocationFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileMainLocationFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileMainLocationFragment"
+        android:label="ProfileMainLocationFragment"
+        tools:layout="@layout/fragment_profile_main_location">
+        <action
+            android:id="@+id/action_profileMainLocationFragment_to_profileMainLocationSearchFragment"
+            app:destination="@id/ProfileMainLocationSearchFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+        <action
+            android:id="@+id/action_profileMainLocationFragment_to_profileAnyLocationSearchFragment"
+            app:destination="@id/ProfileAnyLocationFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileMainLocationSearchFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileMainLocationSearchFragment"
+        android:label="ProfileMainLocationSearchFragment"
+        tools:layout="@layout/fragment_profile_main_location_search">
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProfileAnyLocationFragment"
+        android:name="com.tresfellas.queenbee.ui.register.ProfileAnyLocationFragment"
+        android:label="ProfileAnyLocationFragment"
+        tools:layout="@layout/fragment_profile_any_location">
+    </fragment>
+
+</navigation>
+
+<!--<argument-->
+<!--android:name="registerDTO"-->
+<!--app:argType="com.tresfellas.queenbee.data.model.RegisterDTO" />-->

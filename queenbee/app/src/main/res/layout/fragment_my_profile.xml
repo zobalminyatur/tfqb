@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="userDTO"
+            type="com.tresfellas.queenbee.data.model.UserDTO" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout_my_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppBarLayout_Theme"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/my_profile_appbar_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/ic_back_press"
+                    />
+
+                <TextView
+                    android:id="@+id/my_profile_appbar_title"
+                    style="@style/Widget.Queenbee.TextView.Body1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="프로필"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/my_profile_appbar_shop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_honey_comb"
+                    app:layout_constraintBottom_toBottomOf="@+id/my_profile_appbar_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/my_profile_appbar_title" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout_my_profile"
+            >
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:id="@+id/layout_compatibility_profile"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                >-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/textView_compatibility_profile_decription"-->
+<!--                    style="@style/Widget.Queenbee.TextView.Body1"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="6dp"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="@string/user_profile_compatibility_decription"-->
+<!--                    />-->
+
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_no_my_bold_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/textView_no_my_bold_profile_decription"
+                    style="@style/Widget.Queenbee.TextView.Body3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:text="@string/user_profile_no_my_compatibility"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView_profile_line1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/line"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_my_profile_moment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textView_profile_right_now_title"
+                    style="@style/Widget.Queenbee.TextView.Head6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="바로오늘"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_wing"
+                    app:layout_constraintStart_toEndOf="@+id/textView_profile_right_now_title"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_rn_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_profile_right_now_title"
+                    app:layout_constraintStart_toStartOf="@+id/textView_profile_right_now_title"
+                    android:text="@{userDTO.moment.description}"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/imageView_profile_line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/line"
+                android:layout_marginTop="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                >
+                <TextView
+                    android:id="@+id/textView_my_profile_NickName"
+                    style="@style/Widget.Queenbee.TextView.Head6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{userDTO.nickName}"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="6dp"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_age_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="나이"
+                    />
+                <TextView
+                    android:id="@+id/textView_profile_row_age_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:set_age="@{userDTO.age}"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_location_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="선호지역"
+                    />
+                <TextView
+                    android:id="@+id/textView_profile_row_location_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{userDTO.placeName}"
+                    />
+
+                <TextView
+                    android:id="@+id/textView_profile_row_selfIntro_title"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:textColor="@color/gray_dark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="셀프 소개"
+                    />
+                <TextView
+                    android:id="@+id/textView_profile_row_selfIntro_content"
+                    style="@style/Widget.Queenbee.TextView.Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@{userDTO.selfIntroduction}"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/button_edit_my_profile"
+                >
+                <TextView
+                    android:id="@+id/textView_profile_row_swipe_to_secret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="스와이프하여 과감한 프로필 보기"
+                    />
+                <ImageView
+                    android:id="@+id/imageView_profile_row_swipe_to_secret"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:src="@drawable/ic_swipe_left"
+                    />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button_edit_my_profile"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="프로필 편집"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/round_corner"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

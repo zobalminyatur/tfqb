@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "564696716796",
+    "project_id": "queenbee-f5b58",
+    "storage_bucket": "queenbee-f5b58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564696716796:android:8db72ec69dd2cd87d10e79",
+        "android_client_info": {
+          "package_name": "com.tresfellas.queenbee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564696716796-e0cjaihqk4juq6jmva9h4hn83ictdqc1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6vjcxTaAzNWDSt3rGTU01fc1SQCsAw-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564696716796-e0cjaihqk4juq6jmva9h4hn83ictdqc1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "564696716796-l3as2entet4n1vjmc7j7n8t5caqp4f6g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "TresFellas.QueenBee"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
